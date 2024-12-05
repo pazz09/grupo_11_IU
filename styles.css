@@ -1,109 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #191825;
+  background: #fff;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
   
-  body {
-    font-family: Arial, sans-serif;
-    color: #191825;
-    background: #fff;
-  }
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: #fff;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid #eee;
+}
+
+/* MENU */
   
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px 32px;
-    background: #fff;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
-  }
+.logo img {
+  width: 120px;
+  height: auto;
+}
   
-  .logo img {
-    width: 155px;
-    height: auto;
-  }
+.menu {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  align-items: center;
+}
   
-  .nav {
-    display: flex;
-    gap: 24px;
-  }
+.lista {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.lista li a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+
+}
+
+.botones-menu button {
+  border: none;
+  padding: 10px 15px;
+  margin-left: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* 1ERA PÁGINA */
   
-  .nav a {
-    text-decoration: none;
-    color: #191825;
-    font-size: 20px;
-    font-weight: 400;
-  }
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 10%;
+  background-color: #f7faff;
+}
   
-  .auth-buttons button {
-    padding: 12px 24px;
-    border: none;
-    border-radius: 50px;
-    font-size: 16px;
-    cursor: pointer;
-  }
+.hero-content {
+  max-width: 70%;
+}
   
-  .auth-buttons .login {
-    background: #fff;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  }
+.hero-content h1 {
+  font-size: 130%;
+  color: #FF0004;
+  margin-bottom: 20px;
+  background-color: white;
+  padding: 10px 30px; 
+  display: inline-block; 
+  border-radius: 30px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  font-weight: bold;
+
+}
   
-  .auth-buttons .signup {
-    background: #018FC7;
-    color: #fff;
-  }
+.hero-content .countdown {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.hero-content .countdown span {
+  color: #2aa1d1; /* Azul específico para números */
+}
   
-  .hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 64px;
-  }
+.hero-content .description {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
   
-  .hero-content {
-    max-width: 600px;
-  }
+.hero-content .cta {
+  background-color: #ff4444;
+  color: #fff;
+  border: none;
+  padding: 15px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 15px;
+  margin-left: 29px;
+}
   
-  .hero-content h1 {
-    font-size: 30px;
-    color: #FF0004;
-    margin-bottom: 16px;
-  }
-  
-  .countdown {
-    font-size: 40px;
-    color: #018FC7;
-    margin-bottom: 24px;
-  }
-  
-  .description {
-    font-size: 20px;
-    color: rgba(25, 24, 37, 0.5);
-    margin-bottom: 32px;
-  }
-  
-  .cta {
-    padding: 16px 32px;
-    background: #FF0004;
-    color: #fff;
-    border: none;
-    border-radius: 50px;
-    font-size: 24px;
-    cursor: pointer;
-  }
-  
-  .hero-image img {
-    width: 100%;
-    max-width: 576px;
-    border-radius: 32px;
-  }
-  
-  footer {
-    text-align: center;
-    padding: 16px;
-    background: #191825;
-    color: #fff;
-  }
+footer {
+  text-align: center;
+  padding: 16px;
+  background: #191825;
+  color: #fff;
+}
   

@@ -1,117 +1,122 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Página de Papá Noel</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <!-- Header -->
-  <header class="header">
-    <div class="logo">
-      <img src="images/logo.png" alt="Logo">
-    </div>
-    <nav class="nav">
-      <a href="#home">Home</a>
-      <a href="#papa-noel">Papá Noel</a>
-      <a href="#cartas">Cartas</a>
-      <a href="#juegos">Juegos</a>
-      <a href="#videollamada">Video llamada</a>
-      <a href="#tienda">Tienda</a>
-    </nav>
-    <div class="auth-buttons">
-      <button class="login">Log In</button>
-      <button class="signup">Sign Up</button>
-    </div>
-  </header>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Papá Noel</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="menu">
+          <div class="logo">
+            <img src="/images/logo.png" alt="logo">
+          </div>
+          <ul class="lista">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#papanoel">Papá Noel</a></li>
+            <li><a href="#cartas">Biblioteca de Cartas</a></li>
+            <li><a href="#envia">Juegos</a></li>
+            <li><a href="#juega">Video llamada</a></li>
+          
 
-  <!-- Sección Hero -->
-  <section class="hero" id="home">
-    <div class="hero-content">
-      <h1>Fanáticos de la Navidad</h1>
-      <p class="countdown">FALTAN <span>40 DÍAS, 14 HORAS, 1 MINUTO Y 25 SEGUNDOS</span> PARA NAVIDAD</p>
-      <p class="description">Escribe, juega y ríe sin parar: ¡bienvenidos al cuartel general de Papá Noel en la web!</p>
-      <button class="cta">JUGAR</button>
-    </div>
-    <div class="hero-image">
-      <img src="https://via.placeholder.com/576x578" alt="Imagen de Navidad">
-    </div>
-  </section>
+          </ul>
+          
+          <div class="botones-menu">
+            <button id="btn-login">Log in</button>
+            <button id="btn-register">Sign Up</button>
+          </div>
+        </div>
+      </nav>
+    </header>
 
-  <!-- Sección Historia -->
-  <section class="section historia" id="papa-noel">
-    <h2>¿Quién es Papá Noel?</h2>
-    <div class="historia-content">
-      <article>
-        <img src="https://via.placeholder.com/373x293" alt="Historia 1">
-        <p>Hace mucho tiempo, vivía un hombre llamado Nicolás. Le gustaba ayudar a las personas, sobre todo a los niños y a las familias que no tenían mucho...</p>
-      </article>
-      <article>
-        <img src="https://via.placeholder.com/373x296" alt="Historia 2">
-        <p>Nicolás era muy generoso y amable. En invierno, cuando hacía frío, dejaba regalitos en las casas de las personas sin que nadie lo viera...</p>
-      </article>
-      <article>
-        <img src="https://via.placeholder.com/373x295" alt="Historia 3">
-        <p>Con el tiempo, la historia de San Nicolás se volvió muy famosa, y las personas comenzaron a llamarlo "Papá Noel"...</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- Sección Cartas -->
-  <section class="section cartas" id="cartas">
-    <h2>Cartas a Papá Noel</h2>
-    <div class="cartas-content">
-      <img src="https://via.placeholder.com/561x454" alt="Cartas">
-      <div class="texto">
-        <p>¿Te gustaría enviar tu carta directa a Papá Noel?</p>
-        <button class="cta">Formulario Mágico</button>
+    <!-- 1era Página -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <h1>Fanáticos de la Navidad</h1>
+        <p class="countdown">FALTAN <span>40 DÍAS, 14 HORAS, 1 MINUTO Y 25 SEGUNDOS</span> PARA NAVIDAD</p>
+        <p class="description">Escribe, juega y ríe sin parar: ¡bienvenidos al cuartel general de Papá Noel en la web!</p>
+        <button class="cta">JUGAR</button>
       </div>
-    </div>
-  </section>
-
-  <!-- Sección Juegos -->
-  <section class="section juegos" id="juegos">
-    <h2>Juegos Navideños</h2>
-    <div class="juegos-content">
-      <div class="juego">
-        <h3>Encuentra al Oso Polar</h3>
-        <p>Nuestro pequeño oso polar se ha perdido entre muñecos de nieve. ¿Lo podrás encontrar?</p>
+      <div class="hero-image">
+        <img src="https://via.placeholder.com/576x578" alt="Imagen de Navidad">
       </div>
-      <div class="juego">
-        <h3>Reparte Regalos</h3>
-        <p>Consigue meter la mayor cantidad de regalos en cada chimenea.</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Sección Videollamada -->
-  <section class="section videollamada" id="videollamada">
-    <h2>Videollamada a Papá Noel</h2>
-    <div class="videollamada-content">
-      <img src="https://via.placeholder.com/657x389" alt="Videollamada">
-      <p>Ingresa tu correo para registrarte y poder llamar.</p>
-    </div>
-  </section>
-
-  <!-- Sección Tienda -->
-  <section class="section tienda" id="tienda">
-    <h2>Tienda Navideña</h2>
-    <div class="productos">
-      <div class="producto">
-        <img src="https://via.placeholder.com/180x210" alt="Producto 1">
-        <p>Árbol de Navidad - <span>60€</span></p>
+    <!-- Sección Historia -->
+    <section class="section historia" id="papa-noel">
+      <h2>¿Quién es Papá Noel?</h2>
+      <div class="historia-content">
+        <article>
+          <img src="https://via.placeholder.com/373x293" alt="Historia 1">
+          <p>Hace mucho tiempo, vivía un hombre llamado Nicolás. Le gustaba ayudar a las personas, sobre todo a los niños y a las familias que no tenían mucho...</p>
+        </article>
+        <article>
+          <img src="https://via.placeholder.com/373x296" alt="Historia 2">
+          <p>Nicolás era muy generoso y amable. En invierno, cuando hacía frío, dejaba regalitos en las casas de las personas sin que nadie lo viera...</p>
+        </article>
+        <article>
+          <img src="https://via.placeholder.com/373x295" alt="Historia 3">
+          <p>Con el tiempo, la historia de San Nicolás se volvió muy famosa, y las personas comenzaron a llamarlo "Papá Noel"...</p>
+        </article>
       </div>
-      <div class="producto">
-        <img src="https://via.placeholder.com/185x210" alt="Producto 2">
-        <p>Trineo Papá Noel - <span>600€</span></p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2024 Cuartel General de Papá Noel</p>
-  </footer>
-</body>
+    <!-- Sección Cartas -->
+    <section class="section cartas" id="cartas">
+      <h2>Cartas a Papá Noel</h2>
+      <div class="cartas-content">
+        <img src="https://via.placeholder.com/561x454" alt="Cartas">
+        <div class="texto">
+          <p>¿Te gustaría enviar tu carta directa a Papá Noel?</p>
+          <button class="cta">Formulario Mágico</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección Juegos -->
+    <section class="section juegos" id="juegos">
+      <h2>Juegos Navideños</h2>
+      <div class="juegos-content">
+        <div class="juego">
+          <h3>Encuentra al Oso Polar</h3>
+          <p>Nuestro pequeño oso polar se ha perdido entre muñecos de nieve. ¿Lo podrás encontrar?</p>
+        </div>
+        <div class="juego">
+          <h3>Reparte Regalos</h3>
+          <p>Consigue meter la mayor cantidad de regalos en cada chimenea.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección Videollamada -->
+    <section class="section videollamada" id="videollamada">
+      <h2>Videollamada a Papá Noel</h2>
+      <div class="videollamada-content">
+        <img src="https://via.placeholder.com/657x389" alt="Videollamada">
+        <p>Ingresa tu correo para registrarte y poder llamar.</p>
+      </div>
+    </section>
+
+    <!-- Sección Tienda -->
+    <section class="section tienda" id="tienda">
+      <h2>Tienda Navideña</h2>
+      <div class="productos">
+        <div class="producto">
+          <img src="https://via.placeholder.com/180x210" alt="Producto 1">
+          <p>Árbol de Navidad - <span>60€</span></p>
+        </div>
+        <div class="producto">
+          <img src="https://via.placeholder.com/185x210" alt="Producto 2">
+          <p>Trineo Papá Noel - <span>600€</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2024 Cuartel General de Papá Noel</p>
+    </footer>
+  </body>
 </html>
