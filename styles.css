@@ -121,8 +121,48 @@ header {
   border-radius: 15px;
   margin-left: 29px;
 }
+
+/*Cuentos*/
+.storyframe {
+  flex-direction: column;
+  justify-content: center;
+  display: flex;
+}
+
+.storytitle {
+  color: white;
+}
+
+.Seccion-Cuentos {
+  color: #c3230f;
+  font-size: 48px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.desktop-desktop {
+  line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.storyframe {
+  border-radius: 30px;
+  row-gap: 30px;
+  width: 900px;
+  padding: 40px;
+  filter: drop-shadow(0px 4px 43px rgba(0, 0, 0, 0.25));
+  font-size: 20px;
+  background-color: #C25F50;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
   
 footer {
+  margin-top: 20px;
   text-align: center;
   padding: 16px;
   background: #191825;
