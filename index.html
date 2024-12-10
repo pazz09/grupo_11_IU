@@ -6,11 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Papá Noel</title>
   <link rel="stylesheet" href="styles.css">
-
-  <link rel="icon" href="images/gorro_icon.png" type="image/png" />
 </head>
-
-
 
 <body>
   <header>
@@ -160,42 +156,30 @@
       Cuentos navideños encantadores para disfrutar en familia estas
       fiestas.
     </p>
-    <div class="storyframe">
-      <div class="storytitle">
-        El milagro del muñeco de nieve
+    <div class="story-navigation">
+      <button class="arrow-left" onclick="previousStory()">&#8592;</button>
+      
+      <div class="storyframe">
+        <div class="storytitle">
+          El milagro del muñeco de nieve
+        </div>
+        <div class="stories">
+          <span>
+          <!-- using js for story-->
+          </span>
+        </div>
       </div>
-      <div class="stories">
-        <span>
-          <p>
-            Era la víspera de Navidad en un pequeño pueblo cubierto de
-            nieve. Mateo, un niño curioso y alegre, había construido
-            un muñeco de nieve en su jardín. Lo adornó con una bufanda
-            roja, un sombrero de copa y dos botones grandes como ojos.
-            Esa noche, antes de ir a dormir, Mateo le pidió un deseo
-            al muñeco: que todos en el pueblo pasaran una Navidad
-            llena de alegría.
-          </p>
-          <p>
-            Al amanecer, algo mágico ocurrió. El muñeco de nieve había
-            cobrado vida y comenzó a repartir dulces y sonrisas a los
-            vecinos. La alegría llenó cada rincón del pueblo, y los
-            habitantes salieron a celebrar juntos. La Navidad fue un
-            verdadero milagro, y Mateo nunca olvidó aquel muñeco que
-            hizo realidad su deseo.
-          </p>
-          <p>
-            Desde entonces, cada Navidad, la magia y la bondad
-            iluminaban su hogar y los corazones de todos en el pueblo.
-          </p>
-        </span>
-      </div>
+      <button class="arrow-right" onclick="nextStory()">&#8594;</button>
     </div>
   </section>
+  
 
   <!-- Footer -->
   <footer>
     <p>© 2024 Cuartel General de Papá Noel</p>
   </footer>
+
+  <script src="javascript.js"></script>
 </body>
 
 </html>

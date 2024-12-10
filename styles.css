@@ -126,14 +126,12 @@ header {
 .Seccion-Musica {
   text-align: center;
   font-size: 45px;
-  color: #c3230f;
+  color: #11661A;
   background-image: url("../images/snowflake.png");
-
 }
 .Seccion-Musica p {
-  font-size: 18px;
+  font-size: 20px;
   margin: 0;
-  color: white;
 }
 
 #fila1-musica, #fila2-musica {
@@ -150,14 +148,18 @@ header {
 
 
 /*Cuentos*/
-.storyframe {
-  flex-direction: column;
-  justify-content: center;
+.desktop-desktop {
+  line-height: 1.2;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
 }
 
-.storytitle {
-  color: white;
+.desktop-desktop p {
+  color: #000;
+  font-size: 20px;
+  text-align: center;
 }
 
 .Seccion-Cuentos {
@@ -167,25 +169,63 @@ header {
   text-transform: uppercase;
 }
 
-.desktop-desktop {
-  line-height: 1.2;
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-}
 .storyframe {
-  border-radius: 30px;
-  row-gap: 30px;
-  width: 900px;
-  padding: 40px;
-  filter: drop-shadow(0px 4px 43px rgba(0, 0, 0, 0.25));
-  font-size: 20px;
-  background-color: #C25F50;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   display: flex;
-  margin-bottom: 20px;
+  width: 900px;
+  padding: 40px;
+  border-radius: 30px;
+  background-color: #C25F50;
+  filter: drop-shadow(0px 4px 43px rgba(0, 0, 0, 0.25));
+  font-size: 20px;
+  color: white;
+  text-align: justify;
+}
+
+.storytitle {
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px; 
+}
+
+.story-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; 
+}
+
+.arrow-left, .arrow-right {
+  background-color: #c3230f; 
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease; 
+}
+
+/* Responsive Styling */
+@media (max-width: 1024px) {
+  .storyframe {
+    width: 90%; 
+    padding: 20px;
+  }
+
+  .arrow-left, .arrow-right {
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+  }
 }
 
   
