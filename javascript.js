@@ -46,3 +46,37 @@ const stories = [  // Array of stories
   }
   updateStory();
   
+//Biblioteca cartas
+const images = [
+  "images/carta1.jpg",
+  "images/carta2.jpg",
+  "images/carta 3.jpg"
+];
+
+let carouselIndex = 0; 
+// Referencias a los elementos del DOM
+const currentImage = document.getElementById("current-img");
+const prevButton = document.getElementById("prev");
+const nextButton = document.getElementById("next");
+
+// Función para actualizar la imagen mostrada
+function updateImage() {
+  currentImage.src = images[currentIndex];
+}
+
+// Función para mostrar la imagen anterior
+function showPrevImage() {
+  currentIndex = (currentIndex - 1 + images.length) % images.length; // Volver al último si es necesario
+  updateImage();
+}
+
+// Función para mostrar la siguiente imagen
+function showNextImage() {
+  currentIndex = (currentIndex + 1) % images.length; // Ir al inicio si es necesario
+  updateImage();
+}
+
+// Event listeners para los botones
+prevButton.addEventListener("click", showPrevImage);
+nextButton.addEventListener("click", showNextImage);
+
