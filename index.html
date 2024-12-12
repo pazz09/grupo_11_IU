@@ -77,23 +77,42 @@
           <img src="images/santa-claus-cartas.jpg" alt="Cartas" id="cartas-image">
         </div>
         <div class="texto-cartas">
-          <h2>Cartas a Papá Noel</h2>
-          <p>¿Te gustaría enviar tu carta directa a Papá Noel?</p>
-          <button class="cta">Formulario Mágico</button>
+          <h2 class="h2-title">Cartas a Papá Noel</h2>
+          <p class="bold-text">¿Te gustaría enviar tu carta directa a Papá Noel?</p>
+          <button class="cta" onclick="mostrarFormulario()">Formulario Mágico</button>
         </div>
       </div>
     </div>
+    <!--<div class="hidden" id="formulario"> 
+      <h3>Escribe tu carta a Papá Noel</h3> 
+      <form> 
+        <div id="div-name">
+          <label for="nombre">Nombre:</label> 
+          <input type="text" id="nombre" name="nombre" required> 
+        </div>
+        <div id="div-pais">
+          <label for="pais">País:</label> 
+          <input type="text" id="pais" name="pais" required> 
+        </div>
+        <div id="div-text">
+          <label for="mensaje">Mensaje:</label> 
+          <textarea id="mensaje" name="mensaje" rows="4" required></textarea> 
+        </div>
+        <div id="div-buttons">
+          <button class="form-button" type="submit">Enviar Carta</button> 
+          <button class="form-button"  type="button" onclick="ocultarFormulario()">Cerrar Formulario</button> </form> 
+        </div>
+      </div>-->
   </section>
 
   <!--Sección biblioteca de cartas-->
   <section class="biblioteca-de-cartas" id="biblioteca">
     <div>
-      <h2>Biblioteca de cartas</h2>
-      <p>¡Qué todos tus deseos se hagan realidad!</p>
+      <h2 class="h2-title">Biblioteca de cartas</h2>
+      <p class="bold-text">¡Qué todos tus deseos se hagan realidad!</p>
       <p>Familias del todo el mundo envian sus cartas con sus deseos.</p>
     </div>
     <div class="carousel-container">
-      <div class="biblioteca-content">
         <div class="carousel-images">
           <img src="images/carta1.jpg" alt="Carta1" id="current-img">
         </div>
@@ -103,16 +122,18 @@
         </div>
         <div class="biblioteca-textos">
           <div class="biblioteca-texto">
+            <img src="images/ubicacion.png" alt="Ubicación icon" class="icon">
             <p>Tu carta va directamente al Polo Norte</p>
           </div>
           <div class="biblioteca-texto">
+            <img src="images/calendario.png" alt="Calendario icon" class="icon">
             <p>Recuerda enviar tu carta antes de 23 de Diciembre.</p>
           </div>
           <div class="biblioteca-texto">
+            <img src="images/regalo.png" alt="Regalo icon" class="icon">
             <p>Tu carta participara en un premio especial.</p>
           </div>
         </div>
-      </div>
     </div>
   
   </section>
@@ -128,16 +149,37 @@
 
 
   <!-- Sección Juegos -->
-  <section class="section juegos" id="juegos">
-    <h2>Juegos Navideños</h2>
-    <div class="juegos-content">
-      <div class="juego">
-        <h3>Encuentra al Oso Polar</h3>
-        <p>Nuestro pequeño oso polar se ha perdido entre muñecos de nieve. ¿Lo podrás encontrar?</p>
+  <section>
+    <div class="games-content">
+      <div class="contenedor-text-juegos">
+        <h2 class="h2-title">Juegos Navideños</h2>
       </div>
-      <div class="juego">
-        <h3>Reparte Regalos</h3>
-        <p>Consigue meter la mayor cantidad de regalos en cada chimenea.</p>
+      <div class="juegos">
+        <div class="game-box" id="game-box1">
+          <h3 class="bold-text" id="game-title1">Coge copos de nieve</h3>
+          <p>Haz click en los copos para recoger la mayor cantidad que puedas.</p>
+          <div class="copos-nieve">
+            <p id="score">Puntuación: 0</p> 
+            <div id="gameArea"> 
+              <img id="snowflake" src="images/copo.png" alt="Copo de Nieve"> 
+            </div> 
+            <button id="startButton">Empezar Juego</button>
+            <p id="finalMessage" class="hidden"></p>
+          </div>
+        </div>
+        <div class="game-box" id="game-box2">
+          <h3 class="bold-text" id="game-title2">Encuentra el regalo</h3>
+          <p>Busca en los árboles de navidad los regalos.</p>
+          <div id="busca-regalos">
+            <button class="btn-tree" onclick="checkGift(1)"> 
+              <img src="images/arbol-juego.png" alt="Árbol 1"> </button> 
+            <button class="btn-tree" onclick="checkGift(2)"> 
+              <img src="images/arbol-juego.png" alt="Árbol 2"> </button> 
+            <button class="btn-tree" onclick="checkGift(3)"> 
+              <img src="images/arbol-juego.png" alt="Árbol 3"> </button> 
+            <p id="result"></p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
