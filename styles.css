@@ -20,6 +20,17 @@ header {
   border-bottom: 2px solid #eee;
 }
 
+/*GENERAL*/
+
+h2 {
+  color: #FF0004;
+}
+
+.bold-text {
+  font-weight: bold;
+  font-size: 150%;
+}
+
 /* MENU */
   
 .logo img {
@@ -241,14 +252,14 @@ footer {
   padding: 5%;
 }
 
-/*.carousel-container {
-  width: 100%;
-  border: 1px solid #4615b9;
+.carousel-container {
+  display: flex;
+  flex-flow: row;
+  
 }
 
 .carousel-images {
-  width: 50%; 
-  border: 1px solid #861111;
+  width: 40%;
 }
 
 .carousel-images img {
@@ -256,45 +267,66 @@ footer {
   max-height: 80%;
   border-radius: 10px;
   padding: 10%;
+  padding-top: 30%;
 }
 
 .carousel-buttons {
   width: 20%;
+  width: 20%;
   justify-content: center;
-  border: 1px solid #666666;
   display: flex;
   flex-direction: column;
 }
 
 .carousel-buttons button {
-  margin: 10px 0;
+  margin: 5%;
+  width: 30%;
+  height: 10%;
   padding: 10px 20px;
   background-color: #ddd;
   border: none;
-  border-radius: 5px;
+  border-radius: 100px;
   cursor: pointer;
   font-size: 16px;
   align-self: center;
 }
 
 .carousel-buttons button:hover {
-  background-color: #bbb;
+  background-color: #0ca2dd;
 }
 
-
 .biblioteca-textos {
+  display: flex;
+  flex-direction: column;
   width: 30%;
-  justify-content: center;
-  border: 1px solid #d80aa4;
+  padding: 5%;
+  justify-items: center;
+  align-items: center;
 }
 
 .biblioteca-texto {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
   border-radius: 10px;
   border: 1px solid #666;
-  width: 90%;
-  padding: 10px;
-  background-color: #f9f9f9;
-}*/
+  padding: 3%;
+  align-self: center;
+  margin: 5%;
+  justify-self: center;
+}
+
+.biblioteca-texto:hover {
+  background-color: #FF0004;  
+  transform: scale(1.05); 
+  color: white;  
+}
+
+.icon {
+  width:30%;
+  align-self: center;
+  padding-right: 5%;
+}
 
 /*Cartas*/
 .cartas-container {
