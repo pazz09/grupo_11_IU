@@ -380,6 +380,25 @@ footer {
   transform: scale(1.05);    
 }
 
+.section.cartas { 
+  padding: 20px; 
+} 
+
+.cartas-container { 
+  display: flex; 
+  flex-direction: row; 
+} 
+.cartas-content { 
+  display: flex; 
+  flex-direction: row; 
+} 
+.cartas-img img { 
+  max-width: 100%; 
+  border-radius: 5px; 
+} 
+.texto-cartas { 
+  margin-left: 20px; 
+} 
 
 /*JUEGOS*/
 .games-content {

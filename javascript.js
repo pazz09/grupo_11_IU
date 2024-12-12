@@ -132,3 +132,5 @@ function endGame() {
   finalMessage.textContent = '¡Juego terminado! Puntuación final: ' + score; 
   finalMessage.classList.remove('hidden');
 }
+
+//Cartas
