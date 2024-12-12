@@ -129,16 +129,37 @@
 
 
   <!-- Sección Juegos -->
-  <section class="section juegos" id="juegos">
-    <h2 class="h2-title">Juegos Navideños</h2>
-    <div class="juegos-content">
-      <div class="juego">
-        <h3 class="bold-text">Encuentra al Oso Polar</h3>
-        <p>Nuestro pequeño oso polar se ha perdido entre muñecos de nieve. ¿Lo podrás encontrar?</p>
+  <section>
+    <div class="games-content">
+      <div class="contenedor-text-juegos">
+        <h2 class="h2-title">Juegos Navideños</h2>
       </div>
-      <div class="juego">
-        <h3 class="bold-text">Reparte Regalos</h3>
-        <p>Consigue meter la mayor cantidad de regalos en cada chimenea.</p>
+      <div class="juegos">
+        <div class="game-box" id="game-box1">
+          <h3 class="bold-text" id="game-title1">Encuentra al Oso Polar</h3>
+          <p>Haz click en los copos para recoger la mayor cantidad que puedas.</p>
+          <div class="copos-nieve">
+            <p id="score">Puntuación: 0</p> 
+            <div id="gameArea"> 
+              <img id="snowflake" src="images/copo.png" alt="Copo de Nieve"> 
+            </div> 
+            <button id="startButton">Empezar Juego</button>
+            <p id="finalMessage" class="hidden"></p>
+          </div>
+        </div>
+        <div class="game-box" id="game-box2">
+          <h3 class="bold-text" id="game-title2">Coge copos de nieve</h3>
+          <p>Busca en los árboles de navidad los regalos.</p>
+          <div id="busca-regalos">
+            <button class="btn-tree" onclick="checkGift(1)"> 
+              <img src="images/arbol-juego.png" alt="Árbol 1"> </button> 
+            <button class="btn-tree" onclick="checkGift(2)"> 
+              <img src="images/arbol-juego.png" alt="Árbol 2"> </button> 
+            <button class="btn-tree" onclick="checkGift(3)"> 
+              <img src="images/arbol-juego.png" alt="Árbol 3"> </button> 
+            <p id="result"></p>
+          </div>
+        </div>
       </div>
     </div>
   </section>

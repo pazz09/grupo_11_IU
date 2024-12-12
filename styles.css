@@ -379,3 +379,125 @@ footer {
   background-color: #d9534f;  
   transform: scale(1.05);    
 }
+
+
+/*JUEGOS*/
+.games-content {
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.juegos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.game-box {
+  border-radius: 5px;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 2%;
+  margin: 1%;
+
+}
+
+#game-box1 {
+  background-color: #9acbdf;
+}
+
+#game-box2 {
+  background-color: #df9ac5;
+}
+
+#game-title1{
+  color: #145068;
+}
+
+#game-title2{
+  color: #7a2f5d;
+}
+
+#busca-regalos {
+  background-color: #eed0e2;
+  border-radius: 5px;
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+}
+
+.btn-tree { 
+  border: none; 
+  background-color: transparent; 
+  cursor: pointer; 
+  outline: none; 
+  width: 33%;
+} 
+
+.btn-tree img { 
+  width: 110%;
+  height: auto; transition: transform 0.2s;
+} 
+
+.btn-tree:hover img { 
+  transform: scale(1.1); 
+}
+
+#result { 
+  display: none;
+  position: fixed; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  font-size: 1.5rem; color: black; 
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px; 
+  border-radius: 10px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+}
+
+#gameArea { 
+  position: relative; 
+  width: 80vw;
+  height: 80vw; 
+  max-width: 500px; 
+  max-height: 500px; 
+  margin: 0 auto; 
+  background-color: #bedde9;
+  border-radius: 5px;
+} 
+
+#snowflake { 
+  position: absolute; 
+  width: 15%; 
+  cursor: pointer; 
+} 
+
+#startButton { 
+  display: block; 
+  margin: 20px auto; 
+  padding: 10px 20px; 
+  border: none; 
+  background-color: #ff5733; 
+  color: white; 
+  cursor: pointer; 
+  border-radius: 5px;
+} 
+  
+  #startButton:hover { 
+    background-color: #c70039; 
+  } 
+
+  #score { 
+    font-size: 1.5rem; 
+    margin-bottom: 20px; 
+  }
+
+  .hidden { 
+    display: none; 
+  }
