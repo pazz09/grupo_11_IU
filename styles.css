@@ -489,65 +489,45 @@ footer {
   margin-left: 20px; 
 } 
 
+
 .form-section {
-  
+  padding: 5%;
+  border: 2px solid black;
+}
+
+.form {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+#form-content {
+  border: 2px solid black;
+  width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.form {
-  border: 1px solid #666;
-  display: flex;
-  flex-direction: column;
-  width: 80%;
-}
-
 #div-name{
-  border: 1px solid #666;
-  width: 70%;
+  border: 2px solid black;
+  width: 100%;
 }
 
 #div-pais{
-  border: 1px solid #666;
-
+  border: 2px solid black;
+  width: 100%;
 }
 
 #div-text{
-  border: 1px solid #666;
-
+  border: 2px solid black;
+  width: 100%;
 }
 
 #div-buttons{
-  border: 1px solid #666;
-
+  border: 2px solid black;
+  width: 100%;
 }
-
-.form-button {
-  border: none;
-  padding: 15px 25px;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 10px;
-  cursor: pointer;
-  background-color: #FF0004; 
-  border-radius: 10px;     
-  width: 60%;               
-  padding: 3%;             
-  color: white;              
-  font-size: 13px;           
-  text-align: center;         
-  text-decoration: none;    
-  display: inline-block;     
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  margin: 2%;
-}
-
-.form-button:hover {
-  background-color: #d9534f;  
-  transform: scale(1.05);    
-}
-
 
 /*JUEGOS*/
 .games-content {
