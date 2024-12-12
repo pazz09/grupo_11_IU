@@ -34,11 +34,82 @@
     </nav>
   </header>
 
+  <div id="popup-registro" class="popup-registro">
+    <div class="popup-content">
+        <h2>Registro de Usuario</h2>
+        <form id="form-registro">
+            <label for="username">Nombre de usuario*:</label>
+            <input type="text" id="username" name="username" required minlength="3">
+
+            <label for="password">Contraseña*:</label>
+            <input type="password" id="password" name="password" required minlength="12">
+
+            <label for="password2">Repetir contraseña*:</label>
+            <input type="password" id="password2" name="password2" required>
+
+            <label for="mail">Mail*:</label>
+            <input type="email" id="mail" name="mail" required>
+
+            <label for="genero">Género:</label>
+            <select id="genero" name="genero">
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino">Femenino</option>
+                <option value="Otro">Otro</option>
+                <option value="Prefiero no decirlo">Prefiero no decirlo</option>
+            </select>
+
+            <button type="submit">Aceptar</button>
+            <button type="button" id="cancelar-registro">Cancelar</button>
+            <button type="button" id="limpiar-registro">Limpiar campos</button>
+
+          </form>
+      </div>
+  </div>
+
+
+  <div id="popup-login" class="popup-registro">
+      <div class="popup-content">
+          <h2>Iniciar Sesión</h2>
+          <form id="form-login">
+              <label for="login-username">Nombre del usuario*:</label>
+              <input type="text" id="login-username" name="login-username" required minlength="3">
+
+              <label for="login-password">Contraseña*:</label>
+              <input type="password" id="login-password" name="login-password" required minlength="12">
+
+              <button type="submit">Entrar</button>
+              <button type="button" id="cancelar-login">Cancelar</button>
+          </form>
+      </div>
+  </div>
+
+  <div id="popup-perfil" class="popup-registro" style="display:none;">
+      <div class="popup-content">
+          <h2>Mi Perfil</h2>
+          <form id="form-perfil">
+              <label for="perfil-username">Nombre de usuario:</label>
+              <input type="text" id="perfil-username" name="perfil-username" required minlength="3">
+      
+              <label for="perfil-mail">Mail:</label>
+              <input type="email" id="perfil-mail" name="perfil-mail" required>
+      
+              <label for="perfil-ciudad">Ciudad:</label>
+              <input type="text" id="perfil-ciudad" name="perfil-ciudad" required minlength="3">
+      
+              <label for="perfil-pais">País:</label>
+              <input type="text" id="perfil-pais" name="perfil-pais" required minlength="3">
+      
+              <button type="submit">Guardar cambios</button>
+              <button type="button" id="cancelar-perfil">Cancelar</button>
+          </form>
+      </div>
+  </div>
+
   <!-- 1era Página -->
   <section class="hero" id="home">
     <div class="hero-content">
       <h1>Fanáticos de la Navidad</h1>
-      <p class="countdown">FALTAN <span>40 DÍAS, 14 HORAS, 1 MINUTO Y 25 SEGUNDOS</span> PARA NAVIDAD</p>
+      <p>FALTAN <span id="contador">XX</span> PARA NAVIDAD</p>
       <p class="description">Escribe, juega y ríe sin parar: ¡bienvenidos al cuartel general de Papá Noel en la web!</p>
       <button class="cta">JUGAR</button>
     </div>
@@ -47,34 +118,72 @@
     </div>
   </section>
 
+  <script>
+    function actualizarContador() {
+        const hoy = new Date();
+        const navidad = new Date(hoy.getFullYear(), 11, 25);
+
+        if (hoy > navidad) {
+            navidad.setFullYear(navidad.getFullYear() + 1);
+        }
+
+        const diferencia = navidad - hoy;
+        const diasRestantes = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+        const horasRestantes = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutosRestantes = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+        const segundosRestantes = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+        document.getElementById('contador').innerText = 
+            `${diasRestantes} días, ${horasRestantes} horas, ${minutosRestantes} minutos, ${segundosRestantes} segundos`;
+    }
+
+    setInterval(actualizarContador, 1000);
+  </script>
+
   <!-- Sección Historia -->
-  <section class="section historia" id="papa-noel">
-    <h2>¿Quién es Papá Noel?</h2>
-    <div class="historia-content">
-      <article>
-        <img src="https://via.placeholder.com/373x293" alt="Historia 1">
-        <p>Hace mucho tiempo, vivía un hombre llamado Nicolás. Le gustaba ayudar a las personas, sobre todo a los niños
-          y a las familias que no tenían mucho...</p>
-      </article>
-      <article>
-        <img src="https://via.placeholder.com/373x296" alt="Historia 2">
-        <p>Nicolás era muy generoso y amable. En invierno, cuando hacía frío, dejaba regalitos en las casas de las
-          personas sin que nadie lo viera...</p>
-      </article>
-      <article>
-        <img src="https://via.placeholder.com/373x295" alt="Historia 3">
-        <p>Con el tiempo, la historia de San Nicolás se volvió muy famosa, y las personas comenzaron a llamarlo "Papá
-          Noel"...</p>
-      </article>
-    </div>
-  </section>
+  <section id="papanoel">
+    <h2>PAPÁ NOEL</h2>
+    <section class="intro">
+        <h3>La Historia de Papá Noel</h3>
+        <p>¿Sabías que Papá Noel no siempre fue el personaje que conocemos hoy? ¡Descubre su historia y algunas curiosidades navideñas mientras nos preparamos para la gran noche!</p>
+        <img class="gif" src="/images/regalos.gif" alt="santaRegalo">
+    </section>
+
+    <section class="historia">
+        <h2>¿Quién es Papá Noel?</h2>
+        <div class="contenedor-historia">
+            <img src="/images/santacamina.gif" alt="Papa Noel caminando" class="imagen-papanoel">
+            <p>Hace mucho tiempo, en lo más profundo del Polo Norte, vivía un hombre muy especial llamado Nicolás, aunque todos lo conocían cariñosamente como Papá Noel. Era conocido por su bondad y su gran corazón. Siempre se preocupaba siempre por el bien de los demás y de los más pobres.</p>
+        </div>
+    
+        <div class="contenedor-historia">
+            <img src="/images/duendee.gif" alt="Taller de duendes" class="imagen-papanoel">
+            <p>En su hogar, que está escondido entre montañas de hielo, Papá Noel tiene un enorme taller de juguetes. Este taller es un sitio lleno de color y alegría, donde cada día se fabrican los juguetes más fantásticos que puedas imaginar. Pero Papá Noel no trabaja solo. Lo ayudan los pequeños y traviesos duendes. Estos duendes son muy trabajadores y mágicos, y su trabajo es crear todos los juguetes que Papá Noel repartirá en Navidad.</p>
+        </div>
+    
+        <div class="contenedor-historia">
+            <img src="/images/listaa.gif" alt="Lista mágica" class="imagen-papanoel">
+            <p>Papá Noel no solo fabrica juguetes porque sí. Cada año, en diciembre, revisa su lista mágica. Esta lista tiene los nombres de todos los niños del mundo. Si los niños han sido amables, generosos y han hecho cosas buenas durante el año, ¡su nombre aparece en la lista! Así, Papá Noel sabe exactamente qué juguete regalarles.</p>
+        </div>
+    
+        <div class="contenedor-historia">
+            <img src="/images/trineosanta (3).gif" alt="Papa Noel y su trineo" class="imagen-papanoel-trineo">
+            <p>Cuando llega la Nochebuena, Papá Noel se prepara para su gran viaje. Se pone su abrigo rojo, sus botas mágicas, y sube a su trineo volador, tirado por renos mágicos y reparte regalos a los niños de todo el mundo. Su misión es hacer felices a los niños y recordarles la importancia de ser buenos, amables y generosos.</p>
+        </div>
+
+        <div class="contenedor-historia">
+            <img src="/images/santarelax.gif" alt="Papa Noel y su trineo" class="imagen-papanoel-trineo">
+            <p>Después de entregar los regalos, Papá Noel regresa al Polo Norte, descansa un poco y disfruta de una gran comida con la Señora Claus y los elfos. Luego, se prepara para la próxima Navidad y, cuando llega el verano, ¡se relaja en la piscina para disfrutar del sol antes de que comience de nuevo la temporada navideña!</p>
+        </div>
+
+    </section>
 
   <!-- Sección Cartas -->
   <section class="section cartas" id="cartas">
     <div class="cartas-container">
       <div class="cartas-content">
         <div class="cartas-img">
-          <img src="images/santa-claus-cartas.jpg" alt="Cartas" id="cartas-image">
+          <img src="images/santabaila2.gif" alt="Cartas" id="cartas-image">
         </div>
         <div class="texto-cartas">
           <h2 class="h2-title">Cartas a Papá Noel</h2>
@@ -85,30 +194,39 @@
     </div>
   </section>
 
-  <section class="form-section">
-    <div class="form" id="formulario"> 
-      <h3>Escribe tu carta a Papá Noel</h3> 
-      <form> 
-        <div id="form-content">
-          <div id="div-name">
-            <label for="nombre">Nombre:</label> 
-            <input type="text" id="nombre" name="nombre" required> 
-          </div>
-          <div id="div-pais">
-            <label for="pais">País:</label> 
-            <input type="text" id="pais" name="pais" required> 
-          </div>
-          <div id="div-text">
-            <label for="mensaje">Mensaje:</label> 
-            <textarea id="mensaje" name="mensaje" rows="4" required></textarea> 
-          </div>
-          <div id="div-buttons">
-            <button class="form-button" type="submit">Enviar Carta</button> 
-            <button class="form-button"  type="button" onclick="ocultarFormulario()">Cerrar Formulario</button> 
-          </div>
+  <section id="envia">
+    <h2>FORMULARIO MÁGICO</h2>
+    <section class="enviar">
+        <div class="formulario">
+            <h3>ENVIA TU CARTA A PAPÁ NOEL</h3>
+            <h4>Se la enviaremos enseguida</h4>
+
+            <form id="form-enviar-carta" enctype="multipart/form-data">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre-carta" name="nombre" required>
+
+                <label for="edad">Edad:</label>
+                <input type="number" id="edad-carta" name="edad" min="1" max="100" required>
+
+                <label for="correo-carta">Correo electrónico:</label>
+                <input type="email" id="correo-carta" name="correo-carta" required>
+
+                <label for="ciudad">Ciudad:</label>
+                <input type="text" id="ciudad-carta" name="ciudad" required>
+
+                <label for="pais">País:</label>
+                <input type="text" id="pais-carta" name="pais" required>
+
+                <label for="mensaje">Escribe tu carta:</label>
+                <textarea id="mensaje-carta" name="mensaje" rows="5" placeholder="Querido Papá Noel, ¡Feliz Navidad!" required></textarea>
+
+                <p>O sube una foto de tu carta:</p>
+                <input type="file" id="cartaFoto" name="cartaFoto" accept="image/*">
+
+                <button type="submit">Enviar</button>
+            </form>
         </div>
-      </form>
-    </div>
+    </section>
   </section>
 
   <!--Sección biblioteca de cartas-->
@@ -146,12 +264,22 @@
 
   <!-- Sección Videollamada -->
   <section class="section videollamada" id="videollamada">
-    <h2>Videollamada a Papá Noel</h2>
+    <h2 class="titulo-videollamada">Videollamada a Papá Noel</h2>
     <div class="videollamada-content">
-      <img src="https://via.placeholder.com/657x389" alt="Videollamada">
-      <p>Ingresa tu correo para registrarte y poder llamar.</p>
+      <img id="imagen-placeholder" src="/images/santallamada.jpg" alt="Videollamada">
+      <div id="video-container" style="display: none;">
+        <!-- Aquí se mostrará el video aleatorio -->
+      </div>
+      <form id="form-videollamada">
+        <label for="correo">
+          <span>📧</span> Ingresa tu correo para registrarte y poder llamar
+        </label>
+        <input type="email" id="correo" placeholder="Ingresa tu correo" required>
+        <button type="button" id="btn-llamar" class="btn-llamar">📹 Llamar</button>
+      </form>
     </div>
   </section>
+  
 
 
   <!-- Sección Juegos -->
