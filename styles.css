@@ -139,16 +139,15 @@ h2 {
 
 /* TIENDA */
 
-.section.tienda {
+.titulo {
   text-align: center;
-  margin: 20px auto;
-  font-family: Arial, sans-serif;
+  font-size: 2.5em;
+  color: red;
+  margin-bottom: 20px;
 }
 
-.titulo {
-  font-size: 2em;
-  color: red;
-  margin-bottom: 10px;
+.section-tienda p{
+  text-align: center;
 }
 
 .productos-carousel {
@@ -161,10 +160,9 @@ h2 {
 .productos {
   display: flex;
   gap: 15px;
-  max-width: 80%;
+  max-width: 90%;
   overflow-x: auto;
   scroll-behavior: smooth;
-
 }
 
 .producto {
@@ -175,26 +173,48 @@ h2 {
   border-radius: 10px;
   padding: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .producto img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
   margin-bottom: 10px;
-  
 }
 
 .producto p {
   font-size: 1em;
   margin: 5px 0;
+  font-weight: bold;
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
 
 .producto span {
   color: red;
   font-weight: bold;
+  margin-top: 10px;
+  font-size: 1.2em;
 }
 
+.add-to-cart {
+  padding: 5px 10px;
+  background: green;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-to-cart:hover {
+  background: darkgreen;
+}
+
+/* Botones del carrusel */
 .btn-carousel {
   background-color: white;
   border: none;
@@ -218,8 +238,177 @@ h2 {
   margin-left: 10px;
 }
 
+/* Carrito */
 
+.titulo-carrito {
+  text-align: center;
+  font-size: 1.5em;
+  color: rgb(255, 0, 0);
+  margin-bottom: 15px;
+}
 
+.section.carrito {
+  margin-top: 30px;
+}
+
+.section.carrito p {
+  text-align: center;
+}
+
+.items-carrito {
+  margin: 10px 0;
+}
+
+.items-carrito .item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.items-carrito .item button {
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.items-carrito .item button:hover {
+  background: darkred;
+}
+
+.total {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.total p {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+#finalizar-compra {
+  padding: 10px 15px;
+  background: blue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#finalizar-compra:hover {
+  background: darkblue;
+}
+
+/* Historial */
+
+.titulo-historial {
+  text-align: center;
+  font-size: 1.3em;
+  color: blue;
+  margin-bottom: 30px;
+  
+}
+
+.section-tienda.historial {
+  margin-top: 30px;
+}
+
+.items-historial {
+  margin: 10px 0;
+}
+
+.items-historial .item {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #f4f4f4;
+}
+
+.items-historial .item p {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.items-historial .item ul {
+  list-style: none;
+  padding: 0;
+}
+
+.items-historial .item ul li {
+  margin: 5px 0;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 400px;
+  text-align: center;
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input, select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.btn-pago {
+  padding: 10px 20px;
+  background: blue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-pago:hover {
+  background: darkblue;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
 
 
 

@@ -14,6 +14,158 @@ nextButton1.addEventListener('click', () => {
   productos.scrollBy({ left: 200, behavior: 'smooth' });
 });
 
+// Variables globales
+let carrito = [];
+let historial = [];
+
+// Función para actualizar el carrito
+function actualizarCarrito() {
+  const carritoDiv = document.querySelector('.items-carrito');
+  const totalDiv = document.querySelector('#total');
+  carritoDiv.innerHTML = '';
+
+  let total = 0;
+  carrito.forEach(item => {
+    const itemDiv = document.createElement('div');
+    itemDiv.classList.add('item');
+    itemDiv.innerHTML = `
+      <span>${item.name} - ${item.quantity} x ${item.price} €</span>
+      <button class="remove-item" data-id="${item.id}">Eliminar</button>
+    `;
+    carritoDiv.appendChild(itemDiv);
+    total += item.price * item.quantity;
+  });
+
+  totalDiv.textContent = total;
+
+  // Event listeners para eliminar productos
+  const removeButtons = document.querySelectorAll('.remove-item');
+  removeButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const id = button.getAttribute('data-id');
+      carrito = carrito.filter(item => item.id !== parseInt(id));
+      actualizarCarrito();
+    });
+  });
+}
+
+// Función para agregar al carrito
+function agregarAlCarrito(event) {
+  const producto = event.target.closest('.producto');
+  const id = parseInt(producto.getAttribute('data-id'));
+  const name = producto.getAttribute('data-name');
+  const price = parseInt(producto.getAttribute('data-price'));
+
+  const itemExistente = carrito.find(item => item.id === id);
+  if (itemExistente) {
+    itemExistente.quantity++;
+  } else {
+    carrito.push({ id, name, price, quantity: 1 });
+  }
+
+  actualizarCarrito();
+}
+
+// Función para actualizar el historial
+function actualizarHistorial() {
+  const historialDiv = document.querySelector('.items-historial');
+  historialDiv.innerHTML = '';
+  historial.forEach((compra, index) => {
+    const compraDiv = document.createElement('div');
+    compraDiv.classList.add('item');
+    compraDiv.innerHTML = `
+      <p>Compra #${index + 1}</p>
+      <ul>
+        ${compra
+          .map(
+            item =>
+              `<li>${item.name} - ${item.quantity} x ${item.price} €</li>`
+          )
+          .join('')}
+      </ul>
+    `;
+    historialDiv.appendChild(compraDiv);
+  });
+}
+
+// Mostrar el modal al finalizar compra
+const finalizarCompraBtn = document.querySelector('#finalizar-compra');
+const modal = document.querySelector('#modal-pago');
+const closeModal = document.querySelector('.close');
+const formPago = document.querySelector('#form-pago');
+const medioPagoSelect = document.querySelector('#medio-pago');
+const datosTarjetaDiv = document.querySelector('#datos-tarjeta');
+
+// Mostrar el modal al finalizar compra
+finalizarCompraBtn.addEventListener('click', () => {
+  if (carrito.length > 0) {
+    modal.style.display = 'block';
+  } else {
+    alert('El carrito está vacío');
+  }
+});
+
+// Cerrar el modal
+closeModal.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+
+// Mostrar campos de tarjeta si se selecciona el medio de pago "tarjeta"
+medioPagoSelect.addEventListener('change', () => {
+  if (medioPagoSelect.value === 'tarjeta') {
+    datosTarjetaDiv.style.display = 'block';
+  } else {
+    datosTarjetaDiv.style.display = 'none';
+  }
+});
+
+// Manejar el envío del formulario de pago
+formPago.addEventListener('submit', (e) => {
+  e.preventDefault(); // Evita el envío normal del formulario
+
+  const medioPago = medioPagoSelect.value;
+
+  // Validar los datos de la tarjeta si el medio de pago es tarjeta
+  if (medioPago === 'tarjeta') {
+    const numeroTarjeta = document.querySelector('#numero-tarjeta').value;
+    const fechaExpiracion = document.querySelector('#fecha-expiracion').value;
+    const cvv = document.querySelector('#cvv').value;
+
+    if (!numeroTarjeta || !fechaExpiracion || !cvv) {
+      alert('Por favor, completa los datos de la tarjeta');
+      return;
+    }
+  }
+
+  // Procesa la compra y cierra el modal
+  historial.push([...carrito]); // Agrega el carrito actual al historial
+  carrito = []; // Limpia el carrito
+  actualizarCarrito();
+  actualizarHistorial();
+  alert(`Compra realizada con éxito mediante ${medioPago.toUpperCase()}`);
+  modal.style.display = 'none'; // Cierra el modal
+});
+
+// Event listeners para botones "Agregar al carrito"
+document.querySelectorAll('.add-to-cart').forEach(button => {
+  button.addEventListener('click', agregarAlCarrito);
+});
+
+// Funciones para el carrusel (productos)
+const prevButton2 = document.querySelector('.btn-carousel.prev');
+const nextButton2 = document.querySelector('.btn-carousel.next');
+
+// Al hacer clic en la flecha izquierda
+prevButton2.addEventListener('click', () => {
+  productos.scrollBy({ left: -200, behavior: 'smooth' });
+});
+
+// Al hacer clic en la flecha derecha
+nextButton2.addEventListener('click', () => {
+  productos.scrollBy({ left: 200, behavior: 'smooth' });
+});
+
+
 
 // Cuentos
 const stories = [  // Array of stories
