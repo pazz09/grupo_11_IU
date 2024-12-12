@@ -303,13 +303,3 @@ function endGame() {
 }
 
 //Cartas
-
-function mostrarFormulario() { 
-  let form = document.getElementById('formulario')
-  form.classList.remove('hidden'); 
-} 
-
-function ocultarFormulario() { 
-  let form = document.getElementById('formulario')
-  form.classList.add('hidden'); 
-}
