@@ -416,7 +416,10 @@ input, select {
   text-align: center;
   font-size: 45px;
   color: #11661A;
-  background-image: url("../images/snowflake.png");
+  background-image: url("/images/fondo-musica.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .Seccion-Musica p {
   font-size: 20px;
