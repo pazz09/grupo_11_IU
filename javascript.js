@@ -134,3 +134,11 @@ function endGame() {
 }
 
 //Cartas
+
+function mostrarFormulario() { 
+  document.getElementById('formulario').classList.remove('hidden'); 
+} 
+
+function ocultarFormulario() { 
+  document.getElementById('formulario').classList.add('hidden'); 
+}
