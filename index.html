@@ -5,8 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Papá Noel</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="images/gorro_icon.png" type="image/png" />
+  
+  
 </head>
 
 <body>
@@ -268,7 +271,6 @@
     <div class="videollamada-content">
       <img id="imagen-placeholder" src="/images/santallamada.jpg" alt="Videollamada">
       <div id="video-container" style="display: none;">
-        <!-- Aquí se mostrará el video aleatorio -->
       </div>
       <form id="form-videollamada">
         <label for="correo">
@@ -279,8 +281,78 @@
       </form>
     </div>
   </section>
-  
 
+  
+  <section class="section mapa" id="mapa">
+    <h1 class="titulo-mapa">Mapa Interactivo de Papá Noel</h1>
+    <p>Explora el mapa para ver dónde está Papá Noel ahora mismo.</p>
+    <div id="map"></div>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script>
+      // Inicializar el mapa
+      const map = L.map('map').setView([40.7128, -74.0060], 3); // Nueva York como punto inicial
+
+      // Agregar capa de OpenStreetMap
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+
+      // Ícono personalizado de Papá Noel
+      const santaIcon = L.icon({
+          iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Santa_Claus_Emoji.png',
+          iconSize: [50, 50], // Tamaño del ícono
+          iconAnchor: [25, 50], // Punto de anclaje
+          popupAnchor: [0, -50] // Posición del popup
+      });
+
+      // Lista de ubicaciones para Papá Noel
+      const locations = [
+          { lat: 40.7128, lon: -74.0060, name: "Nueva York" },
+          { lat: 51.5074, lon: -0.1278, name: "Londres" },
+          { lat: 48.8566, lon: 2.3522, name: "París" },
+          { lat: 35.6895, lon: 139.6917, name: "Tokio" },
+          { lat: -33.8688, lon: 151.2093, name: "Sídney" }
+      ];
+
+      // Agregar marcador de Papá Noel en la ubicación inicial
+      const santaMarker = L.marker([locations[0].lat, locations[0].lon], { icon: santaIcon }).addTo(map);
+      santaMarker.bindPopup(`🎅 Papá Noel está en ${locations[0].name}`).openPopup();
+
+      let index = 0;
+      let progress = 0;
+
+      // Función para interpolar entre dos puntos
+      function interpolate(start, end, progress) {
+          return start + (end - start) * progress;
+      }
+
+      // Animar el movimiento de Papá Noel
+      function animateSanta() {
+          const current = locations[index];
+          const next = locations[(index + 1) % locations.length];
+
+          if (progress < 1) {
+              const lat = interpolate(current.lat, next.lat, progress);
+              const lon = interpolate(current.lon, next.lon, progress);
+              santaMarker.setLatLng([lat, lon]);
+
+              progress += 0.005; // Incrementa el progreso (ajusta para hacerlo más lento o rápido)
+              setTimeout(animateSanta, 200); // Intervalo entre pasos de la animación
+          } else {
+              // Finalizar movimiento y actualizar la ubicación
+              index = (index + 1) % locations.length;
+              santaMarker.bindPopup(`🎅 Papá Noel está en ${next.name}`).openPopup();
+              progress = 0; // Reiniciar progreso para la próxima animación
+              setTimeout(animateSanta, 1000); // Pausa antes de la próxima animación
+          }
+
+          // Ajustar el centro del mapa para seguir a Papá Noel
+          map.setView(santaMarker.getLatLng(), 4, { animate: true });
+      }
+
+      animateSanta();
+    </script>
+  </section>
 
   <!-- Sección Juegos -->
   <section>
@@ -474,6 +546,9 @@
     <p>© 2024 Cuartel General de Papá Noel</p>
   </footer>
 
+  
+
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
   <script src="javascript.js"></script>
 </body>
 

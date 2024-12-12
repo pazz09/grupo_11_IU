@@ -304,22 +304,23 @@ function endGame() {
 
 // VIDEOLLAMADA
 
+const videos = [
+  "/videos/video1.mp4",
+  "/videos/video2.mp4"
+  
+];
+
 const btnLlamar = document.querySelector('#btn-llamar');
 const videoContainer = document.querySelector('#video-container');
 const imagenPlaceholder = document.querySelector('#imagen-placeholder');
 
-// Lista de videos aleatorios
-const videos = [
-  "https://www.youtube.com/watch?v=PK52-2DO6kY", 
-  "https://www.youtube.com/watch?v=TihIkJUWxZg",
-  "https://www.youtube.com/watch?v=iRMGqTWqVuo"
-];
-
-// Función para mostrar un video aleatorio
 function mostrarVideoAleatorio() {
   const videoAleatorio = videos[Math.floor(Math.random() * videos.length)];
 
+  // Oculta la imagen inicial
   imagenPlaceholder.style.display = 'none';
+
+  // Muestra el contenedor del video con el reproductor
   videoContainer.style.display = 'block';
   videoContainer.innerHTML = `
     <video width="657" height="389" controls autoplay>
@@ -329,7 +330,7 @@ function mostrarVideoAleatorio() {
   `;
 }
 
-// Evento al presionar el botón "Llamar"
+// Evento al presionar "Llamar"
 btnLlamar.addEventListener('click', (e) => {
   e.preventDefault();
 
@@ -341,7 +342,6 @@ btnLlamar.addEventListener('click', (e) => {
     return;
   }
 
-  // Mostrar el video aleatorio
   mostrarVideoAleatorio();
 });
 
@@ -504,3 +504,8 @@ document.getElementById("form-enviar-carta").addEventListener("submit", function
 
   document.getElementById("form-enviar-carta").reset();
 });
+
+
+
+
+
