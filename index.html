@@ -390,6 +390,33 @@
     </div>
   </section>
 
+  <section class="section ayuda-regalo" id="ayuda-regalo">
+    <h2>¿No sabes qué pedir para Navidad? ¡Te ayudamos!</h2>
+    <p>Haz clic en el botón y te daremos una sugerencia.</p>
+    <button id="sugerirRegalo">Sugerir un regalo</button>
+    <div id="resultado"></div>
+  </section>
+  <script>
+    const sugerirRegaloButton = document.getElementById("sugerirRegalo");
+    const resultadoDiv = document.getElementById("resultado");
+
+    const regalos = [
+      "Un set de LEGO",
+      "Unos auriculares Bluetooth",
+      "Una bufanda elegante",
+      "Un bestseller reciente",
+      "Un balón de fútbol",
+      "Un smartwatch",
+      "Un videojuego",
+      "Una tarjeta regalo"
+    ];
+
+    sugerirRegaloButton.addEventListener("click", () => {
+      const regaloAleatorio = regalos[Math.floor(Math.random() * regalos.length)];
+      resultadoDiv.textContent = `🎁 Sugerencia de regalo: ${regaloAleatorio}`;
+    });
+  </script>
+
   <!-- Sección Tienda -->
   <section class="section-tienda" id="tienda">
     <h2 class="titulo">Tienda</h2>

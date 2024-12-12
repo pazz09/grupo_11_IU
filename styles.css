@@ -531,6 +531,7 @@ footer {
 /*Biblioteca cartas*/
 .biblioteca-de-cartas {
   padding: 5%;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .carousel-container {
@@ -583,6 +584,7 @@ footer {
   padding: 5%;
   justify-items: center;
   align-items: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .biblioteca-texto {
@@ -1023,7 +1025,7 @@ button {
 }
 
 #papanoel .contenedor-historia img {
-  width: 50%; 
+  width: 30%; 
   border-radius: 10px;
 }
 
@@ -1043,6 +1045,8 @@ button {
 .historia {
   padding: 5%;
 }
+
+
 /* Sección Envía tu Carta */
 #envia {
   display: flex;
@@ -1103,6 +1107,7 @@ button {
   font-size: 2em;
   margin: 20px 0;
   text-align: center;
+  margin-top: 60px;
 }
 
 .mapa p {
@@ -1115,4 +1120,24 @@ button {
   margin: 0 auto;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+
+}
+
+.ayuda-regalo {
+  text-align: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 600px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  margin-top: 90px;
+  margin-bottom: 100px;
+}
+
+#resultado {
+  margin-top: 20px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: green;
 }
