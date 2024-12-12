@@ -333,6 +333,10 @@ footer {
   padding: 5%;
 }
 
+#cartas {
+  display: flex;
+  flex-direction: column;
+}
 .cartas-content{
   display: flex;
   width: 100%;
@@ -399,6 +403,15 @@ footer {
 .texto-cartas { 
   margin-left: 20px; 
 } 
+
+.formulario-container {
+  border: 1px solid #666;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  align-self: center;
+}
 
 /*JUEGOS*/
 .games-content {
