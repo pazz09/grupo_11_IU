@@ -1,3 +1,20 @@
+//TIENDA
+
+const prevButton1 = document.querySelector('.btn-carousel.prev');
+const nextButton1 = document.querySelector('.btn-carousel.next');
+const productos = document.querySelector('.productos');
+
+// Al hacer clic en la flecha izquierda
+prevButton1.addEventListener('click', () => {
+  productos.scrollBy({ left: -200, behavior: 'smooth' });
+});
+
+// Al hacer clic en la flecha derecha
+nextButton1.addEventListener('click', () => {
+  productos.scrollBy({ left: 200, behavior: 'smooth' });
+});
+
+
 // Cuentos
 const stories = [  // Array of stories
     {

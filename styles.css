@@ -95,7 +95,7 @@ header {
 }
 
 .hero-content .countdown span {
-  color: #2aa1d1; /* Azul específico para números */
+  color: #2aa1d1; 
 }
   
 .hero-content .description {
@@ -121,6 +121,94 @@ header {
   border-radius: 15px;
   margin-left: 29px;
 }
+
+/* TIENDA */
+
+.section.tienda {
+  text-align: center;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+}
+
+.titulo {
+  font-size: 2em;
+  color: red;
+  margin-bottom: 10px;
+}
+
+.productos-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.productos {
+  display: flex;
+  gap: 15px;
+  max-width: 80%;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+
+}
+
+.producto {
+  flex: 0 0 auto;
+  width: 150px;
+  text-align: center;
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+.producto img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  
+}
+
+.producto p {
+  font-size: 1em;
+  margin: 5px 0;
+}
+
+.producto span {
+  color: red;
+  font-weight: bold;
+}
+
+.btn-carousel {
+  background-color: white;
+  border: none;
+  font-size: 1.5em;
+  padding: 5px 10px;
+  cursor: pointer;
+  color: black;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.btn-carousel:hover {
+  background-color: lightgray;
+}
+
+.prev {
+  margin-right: 10px;
+}
+
+.next {
+  margin-left: 10px;
+}
+
+
+
+
+
+
+
 
 /*Musica*/
 .Seccion-Musica {
