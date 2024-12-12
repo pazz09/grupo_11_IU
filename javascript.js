@@ -382,8 +382,7 @@ document.getElementById("form-registro").addEventListener("submit", function(eve
   const password = document.getElementById("password").value;
   const password2 = document.getElementById("password2").value;
   const email = document.getElementById("mail").value;
-  const ciudad = document.getElementById("ciudad").value;
-  const pais = document.getElementById("pais").value;
+  
 
   if (password !== password2) {
       alert("Las contraseñas no coinciden");
@@ -400,8 +399,6 @@ document.getElementById("form-registro").addEventListener("submit", function(eve
       username: username,
       password: password,
       email: email,
-      ciudad: ciudad,
-      pais: pais,
       cartas: []
   };
 
@@ -505,24 +502,7 @@ document.getElementById("form-enviar-carta").addEventListener("submit", function
   document.getElementById("form-enviar-carta").reset();
 });
 
-const sugerirRegaloButton = document.getElementById("sugerirRegalo");
-const resultadoDiv = document.getElementById("resultado");
 
-const regalos = [
-    "Un set de LEGO",
-    "Unos auriculares Bluetooth",
-    "Una bufanda elegante",
-    "Un bestseller reciente",
-    "Un balón de fútbol",
-    "Un smartwatch",
-    "Un videojuego",
-    "Una tarjeta regalo"
-];
-
-sugerirRegaloButton.addEventListener("click", () => {
-    const regaloAleatorio = regalos[Math.floor(Math.random() * regalos.length)];
-    resultadoDiv.textContent = `🎁 Sugerencia de regalo: ${regaloAleatorio}`;
-});
 
 
 

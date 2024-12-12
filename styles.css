@@ -52,15 +52,16 @@ h2 {
 .lista {
   display: flex;
   list-style: none;
-  gap: 20px;
+  gap: 50px;
   padding: 0;
   margin: 0;
 }
 
+
 .lista li a {
   color: #000000;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 1rem;
   transition: color 0.3s ease;
 
@@ -1140,4 +1141,47 @@ button {
   font-size: 1.2em;
   font-weight: bold;
   color: green;
+}
+
+
+
+
+
+@media screen and (max-width: 768px) {
+  .menu {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+
+  .logo img {
+      width: 200px;
+  }
+
+  .lista {
+      flex-direction: row;
+      justify-content: center;
+      gap: 25px;
+  }
+
+  .lista li a {
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+  }
+
+  #home > div {
+      margin-top: 50px;
+  }
+  
+  #papanoel .contenedor-historia {
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+  }
+
+  #papanoel .contenedor-historia img{
+      max-width: 300px;
+      margin-bottom: 10px;
+  }
+
 }
