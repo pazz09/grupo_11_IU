@@ -985,6 +985,8 @@ button {
   margin-left: 5px;
 }
 
+/*Historia*/
+
 #papanoel .intro {
   text-align: center;
   padding: 2rem;
@@ -1021,8 +1023,7 @@ button {
 }
 
 #papanoel .contenedor-historia img {
-  max-width: 250px; 
-  height: auto; 
+  width: 50%; 
   border-radius: 10px;
 }
 
@@ -1030,10 +1031,17 @@ button {
   flex-grow: 1;
   font-size: 1rem;
   line-height: 1.5;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
 }
 
 #papanoel .texto-historia {
   font-size: 0.7rem;
+}
+
+.historia {
+  padding: 5%;
 }
 /* Sección Envía tu Carta */
 #envia {
